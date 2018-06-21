@@ -4,6 +4,7 @@
 // @category     Info
 // @namespace    sdf12321asccerverv
 // @author       lokpro
+// @downloadURL https://github.com/Ingrass/OPRTimer/raw/master/OPRTimer.user.js
 // @match        https://opr.ingress.com/recon*
 // @grant        none
 // ==/UserScript==

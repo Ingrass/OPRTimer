@@ -2,7 +2,7 @@
 ## 審po時間倒計時 OPR CountDown Timer
 
 ## script url:
-https://github.com/Ingrass/OPRTimer/raw/master/OPRTimer.js
+https://github.com/Ingrass/OPRTimer/raw/master/OPRTimer.user.js
 
 ![readme](readme1.png)
 
