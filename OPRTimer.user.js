@@ -1,15 +1,20 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name         OPRTimer
-// @version      1.0
+// @version      1.1
 // @category     Info
 // @namespace    sdf12321asccerverv
 // @author       lokpro
-// @downloadURL https://github.com/Ingrass/OPRTimer/raw/master/OPRTimer.user.js
 // @match        https://opr.ingress.com/recon*
+// @include     https://wayfarer.nianticlabs.com/review*
 // @grant        none
 // ==/UserScript==
 
 // CountingTimer
+
+/*
+v1.1 11/10/2019
+- fixes for new WayFarer site
+*/
 
 var interval = setInterval( function(){
 	
@@ -23,7 +28,7 @@ var interval = setInterval( function(){
 	// information OK
 	clearInterval( interval );
 
-	document.querySelector(  '.navbar-header>a').innerHTML += "&nbsp;&nbsp;<span id='CountingTimer' class1='navbar-brand' style='float:right; color:#FFFF00;'></span>";
+	document.querySelector(  '.niantic-wayfarer-logo').parentNode.innerHTML += "&nbsp;&nbsp;<span id='CountingTimer' class1='navbar-brand' style='float:right; color:#774444;  background-color: #FFFFBB;'></span>";
 	var countingTimer = document.getElementById('CountingTimer');
 
 	var date0 = new Date( expires );
