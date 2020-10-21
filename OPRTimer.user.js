@@ -1,17 +1,21 @@
 // ==UserScript==
 // @name         OPRTimer
-// @version      1.1
+// @version      1.2
 // @category     Info
 // @namespace    sdf12321asccerverv
 // @author       lokpro
-// @match        https://opr.ingress.com/recon*
 // @include     https://wayfarer.nianticlabs.com/review*
+// @updateURL    https://github.com/Ingrass/OPRTimer/raw/master/OPRTimer.user.js
+// @downloadURL  https://github.com/Ingrass/OPRTimer/raw/master/OPRTimer.user.js
 // @grant        none
 // ==/UserScript==
 
 // CountingTimer
 
 /*
+v1.2 21/10/2020
+- 因應 Wayfarer變數名稱轉變 的修正
+
 v1.1 11/10/2019
 - fixes for new WayFarer site
 */
@@ -21,7 +25,7 @@ var interval = setInterval( function(){
 	// wait for information available
 	var expires;
 	try {
-		expires = angular.element(document.getElementById('NewSubmissionController')).scope().subCtrl.pageData.expires;
+		expires = angular.element(document.getElementById('ReviewController')).scope().reviewCtrl.pageData.expires;
 	} catch (e) {
 		return;
 	}
