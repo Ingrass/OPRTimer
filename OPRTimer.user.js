@@ -29,10 +29,7 @@ v1.1 11/10/2019
 
 	let func = XMLHttpRequest.prototype.open;
 	XMLHttpRequest.prototype.open = function( method, url ){
-		console.log( "open" )
 		if( method=="GET" && url.endsWith("vault/review") ){
-			console.log( "yes" )
-			
 			var send2 = this.send;
 			this.send = function(){
 				this.sendArguments = arguments;
