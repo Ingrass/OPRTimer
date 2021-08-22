@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPRTimer
-// @version      1.3
+// @version      1.3.1
 // @category     Info
 // @namespace    sdf12321asccerverv
 // @author       lokpro
@@ -14,7 +14,7 @@
 // CountingTimer
 
 /*
-v1.3 22/8/2021
+v1.3.1 22/8/2021
 - fixes for new WayFarer site, again
 
 v1.2 21/10/2020
