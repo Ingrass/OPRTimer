@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         OPRTimer
-// @version      1.3.1
+// @version      1.3.2
 // @category     Info
 // @namespace    sdf12321asccerverv
 // @author       lokpro
@@ -14,7 +14,7 @@
 // CountingTimer
 
 /*
-v1.3.1 22/8/2021
+v1.3.2 22/8/2021
 - fixes for new WayFarer site, again
 
 v1.2 21/10/2020
@@ -49,13 +49,11 @@ v1.1 11/10/2019
 		return  func.apply(this, arguments);
 	}
 
-	var waitInitComplete = setInterval( function(){
+	var waitReady = setInterval( function(){
+		if( !document.body ) return;
+		clearInterval( waitReady );
 
-		let el_logo = document.querySelector("wf-logo");
-		if( !el_logo ) return;
-		clearInterval( waitInitComplete );
-
-		el_logo.closest("div").innerHTML += /*html*/`<span id='CountingTimer' style='color:#774444; background-color: #FFFFBB; font-size:2em; margin-left:1em;align-self:flex-end;'></span>`;
+		document.body.innerHTML += /*html*/`<span id='CountingTimer' style='position: fixed; top:0; right: 70px; color:#774444; background-color: #FFFFBBCC; font-size:1.5em; '></span>`;
 		
 		let el_countingTimer = document.getElementById('CountingTimer');
 
@@ -63,7 +61,7 @@ v1.1 11/10/2019
 			if( ! location.href.includes("new/review") ){
 				el_countingTimer.style.display = "none";
 			}else{
-				el_countingTimer.style.display = "inline";
+				el_countingTimer.style.display = "block";
 				let date = Math.max( 0, expires - Date.now() );
 				el_countingTimer.innerText = new Date(date).toISOString().substr(14, 5);
 			}
