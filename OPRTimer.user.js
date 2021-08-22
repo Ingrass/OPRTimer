@@ -25,7 +25,7 @@ v1.1 11/10/2019
 */
 
 (function(){
-	let expires;
+	let expires = 0;
 
 	let func = XMLHttpRequest.prototype.open;
 	XMLHttpRequest.prototype.open = function( method, url ){
@@ -55,7 +55,7 @@ v1.1 11/10/2019
 		if( !el_logo ) return;
 		clearInterval( waitInitComplete );
 
-		el_logo.closest("div").innerHTML += /*html*/`<span id='CountingTimer' style='color:#774444; background-color: #FFFFBB; font-size:2em; margin-left:1em;align-self:flex-end;'>00:00</span>`;
+		el_logo.closest("div").innerHTML += /*html*/`<span id='CountingTimer' style='color:#774444; background-color: #FFFFBB; font-size:2em; margin-left:1em;align-self:flex-end;'></span>`;
 		
 		let el_countingTimer = document.getElementById('CountingTimer');
 
